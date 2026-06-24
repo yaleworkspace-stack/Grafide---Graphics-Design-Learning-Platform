@@ -4,6 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Verify Certificate — Grafide</title>
+
+  <!-- Primary SEO -->
+<meta name="description" content="Grafide — learn graphics design with structured courses, video tutorials, and verified certificates. CorelDRAW, Photoshop, Illustrator, Word, Canva." />
+<meta name="keywords" content="graphics design, learn design, Photoshop tutorial, CorelDRAW, Adobe Illustrator, Canva, design certificate, online design course" />
+<meta name="author" content="Grafide" />
+<meta name="robots" content="index, follow" />
+ 
+<!-- Open Graph (social sharing) -->
+<meta property="og:type"        content="website" />
+<meta property="og:site_name"   content="Grafide" />
+<meta property="og:title"       content="Grafide — Learn Graphics Design" />
+<meta property="og:description" content="Structured design courses, embedded tutorials, and verifiable certificates. Free to start." />
+<meta property="og:url"         content="https://grafide.com/" />
+<meta property="og:image"       content="https://grafide.com/images/og-image.png" />
+ 
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content="Grafide — Learn Graphics Design" />
+<meta name="twitter:description" content="Structured design courses, embedded tutorials, and verifiable certificates." />
+<meta name="twitter:image"       content="https://grafide.com/images/og-image.png" />
+ 
+<!-- Canonical -->
+<link rel="canonical" href="https://grafide.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -26,8 +49,56 @@
     </div>
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
-        <img src="../images/logo.png" alt="Grafide logo" class="logo-img" />
+        <img src="../images/logo.png" alt="Grafide" width="120" />
       </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-divider" id="navDivider"></div>
+      <div class="nav-auth" id="navAuth">
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      </div>
+
+      <div class="nav-user hidden" id="navUser">
+        <div class="nav-user-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="dashboard.html" class="btn-dashboard">
+          <i class="fa-solid fa-gauge"></i> Dashboard
+        </a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost"
+                style="font-size:0.82rem;padding:0.45rem 1rem;"
+                onclick="logout()">Sign Out</button>
+      </div>
+
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn-primary"
+                onclick="openModal('signup');document.getElementById('navMobile').classList.remove('open')">
+          Get Started
+        </button>
+        <button class="btn-ghost"
+                onclick="openModal('login');document.getElementById('navMobile').classList.remove('open')">
+          Sign In
+        </button>
+      </div>
     </div>
   </nav>
 

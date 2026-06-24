@@ -1,4 +1,5 @@
 com\grafide\controller\AuthController.class
+com\grafide\controller\ContactController.class
 com\grafide\controller\AuthController$RegisterRequest.class
 com\grafide\config\SecurityConfig.class
 com\grafide\model\Course.class
@@ -6,6 +7,7 @@ com\grafide\model\Course$Level.class
 com\grafide\model\Progress.class
 com\grafide\model\User.class
 com\grafide\security\JwtUtil.class
+com\grafide\controller\ContactController$ContactRequest.class
 com\grafide\controller\NewsletterController.class
 com\grafide\repository\UserRepository.class
 com\grafide\controller\ProgressController.class

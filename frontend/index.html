@@ -72,33 +72,56 @@
     </div>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Grafide logo" class="logo-img" />
+        <img src="images/logo.png" alt="Grafide" width="120" />
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
         <li><a href="pages/about.html">About</a></li>
         <li><a href="pages/contact.html">Contact</a></li>
-        <li><a href="pages/dashboard.html">Dashboard</a></li>
       </ul>
+      <div class="nav-divider" id="navDivider"></div>
       <div class="nav-auth" id="navAuth">
         <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
         <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
       </div>
+
       <div class="nav-user hidden" id="navUser">
-        <span class="user-greeting">Hello, <strong id="userName"></strong></span>
-        <button class="btn-ghost" onclick="logout()">Sign Out</button>
+        <div class="nav-user-links">
+          <a href="index.html">Home</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="pages/dashboard.html" class="btn-dashboard">
+          <i class="fa-solid fa-gauge"></i> Dashboard
+        </a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost"
+                style="font-size:0.82rem;padding:0.45rem 1rem;"
+                onclick="logout()">Sign Out</button>
       </div>
+
       <button class="nav-burger" id="navBurger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
+
     <div class="nav-mobile" id="navMobile">
       <a href="index.html">Home</a>
       <a href="pages/about.html">About</a>
       <a href="pages/contact.html">Contact</a>
       <a href="pages/dashboard.html">Dashboard</a>
-      <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
-      <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      <div class="mobile-auth">
+        <button class="btn-primary"
+                onclick="openModal('signup');document.getElementById('navMobile').classList.remove('open')">
+          Get Started
+        </button>
+        <button class="btn-ghost"
+                onclick="openModal('login');document.getElementById('navMobile').classList.remove('open')">
+          Sign In
+        </button>
+      </div>
     </div>
   </nav>
 
