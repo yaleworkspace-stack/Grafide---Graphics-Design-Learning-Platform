@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Grafide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/legal.css" />
+</head>
+<body>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="auth-panel" id="loginPanel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h2 class="auth-title">Sign in to Grafide</h2>
+        <div class="auth-field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" /></div>
+        <button class="btn-primary full" id="loginBtn">Sign In</button>
+        <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
+        <div id="loginError" class="auth-error"></div>
+      </div>
+      <div class="auth-panel hidden" id="signupPanel">
+        <p class="auth-eyebrow">Join the community</p>
+        <h2 class="auth-title">Create your account</h2>
+        <div class="auth-field"><label>Full Name</label><input type="text" id="signupName" placeholder="Your name" /></div>
+        <div class="auth-field"><label>Email</label><input type="email" id="signupEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="signupPassword" placeholder="Min. 8 characters" /></div>
+        <button class="btn-primary full" id="signupBtn">Create Account</button>
+        <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
+        <div id="signupError" class="auth-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-accent-bars">
+      <span class="bar bar-white"></span>
+      <span class="bar bar-navy"></span>
+      <span class="bar bar-cyan"></span>
+    </div>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Grafide" width="120" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <div class="nav-auth" id="navAuth">
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      </div>
+      <div class="nav-user hidden" id="navUser">
+        <div class="nav-user-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="dashboard.html" class="btn-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost" style="font-size:0.82rem;padding:0.45rem 1rem;" onclick="logout()">Sign Out</button>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="../index.html">Home</a><a href="about.html">About</a>
+      <a href="contact.html">Contact</a><a href="dashboard.html">Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <p class="section-eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="legal-updated">Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <div class="legal-layout">
+    <aside class="legal-sidebar">
+      <p class="legal-sidebar-label">On this page</p>
+      <nav class="legal-toc">
+        <a href="#what-we-collect">1. What We Collect</a>
+        <a href="#how-we-use">2. How We Use It</a>
+        <a href="#storage">3. Data Storage</a>
+        <a href="#sharing">4. Sharing</a>
+        <a href="#cookies">5. Cookies</a>
+        <a href="#your-rights">6. Your Rights</a>
+        <a href="#children">7. Children</a>
+        <a href="#security">8. Security</a>
+        <a href="#changes-privacy">9. Changes</a>
+        <a href="#contact-privacy">10. Contact</a>
+      </nav>
+    </aside>
+
+    <main class="legal-body">
+
+      <section id="what-we-collect" class="legal-section">
+        <h2>1. What We Collect</h2>
+        <p>When you use Grafide, we collect the following categories of information:</p>
+        <div class="legal-table-wrap">
+          <table class="legal-table">
+            <thead>
+              <tr><th>Data Type</th><th>What It Includes</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Account Data</td><td>Name, email address, hashed password</td><td>To create and manage your account</td></tr>
+              <tr><td>Progress Data</td><td>Lessons completed, quiz scores, level status</td><td>To track your learning journey</td></tr>
+              <tr><td>Certificate Data</td><td>Name, course completed, date issued, certificate ID</td><td>To issue and verify certificates</td></tr>
+              <tr><td>Usage Data</td><td>Pages visited, time on platform, browser type</td><td>To improve the platform</td></tr>
+              <tr><td>Communications</td><td>Messages sent via contact form, newsletter email</td><td>To respond to enquiries</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>We do not collect payment information directly. We do not sell your personal data.</p>
+      </section>
+
+      <section id="how-we-use" class="legal-section">
+        <h2>2. How We Use Your Data</h2>
+        <p>We use your data to:</p>
+        <ul class="legal-list">
+          <li>Create and maintain your Grafide account</li>
+          <li>Track and display your learning progress</li>
+          <li>Issue and verify completion certificates</li>
+          <li>Send account-related communications (e.g. password resets)</li>
+          <li>Send newsletters if you have subscribed (you can unsubscribe at any time)</li>
+          <li>Improve course content and platform features</li>
+          <li>Respond to contact form submissions</li>
+        </ul>
+        <p>We do not use your data for automated decision-making or profiling that produces legal effects.</p>
+      </section>
+
+      <section id="storage" class="legal-section">
+        <h2>3. Data Storage</h2>
+        <p>Your data is stored in MongoDB — both locally during development and via MongoDB Atlas (cloud) in production. Data is stored within secure, access-controlled environments.</p>
+        <p>Passwords are never stored in plain text. We use BCrypt hashing to store password data securely.</p>
+        <p>We retain your data for as long as your account is active. If you delete your account, your personal data will be removed within 30 days, except where retention is required by law.</p>
+      </section>
+
+      <section id="sharing" class="legal-section">
+        <h2>4. Sharing Your Data</h2>
+        <p>We do not sell, trade, or rent your personal data to third parties.</p>
+        <p>We may share data in the following limited circumstances:</p>
+        <ul class="legal-list">
+          <li><strong>Service providers:</strong> Infrastructure and hosting providers who process data on our behalf under strict data processing agreements</li>
+          <li><strong>Legal requirements:</strong> If required by law, court order, or governmental authority</li>
+          <li><strong>Certificate verification:</strong> Certificate ID, student name, course name, and issue date are publicly accessible via the verification endpoint for anyone with the certificate ID</li>
+        </ul>
+      </section>
+
+      <section id="cookies" class="legal-section">
+        <h2>5. Cookies</h2>
+        <p>Grafide uses minimal cookies and browser storage. We use localStorage to store your authentication token and session data locally on your device. This data does not leave your browser except when making authenticated API requests to our backend.</p>
+        <p>We do not use third-party advertising cookies. See our full <a href="cookies.html">Cookie Policy</a> for details.</p>
+      </section>
+
+      <section id="your-rights" class="legal-section">
+        <h2>6. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul class="legal-list">
+          <li><strong>Access</strong> the personal data we hold about you</li>
+          <li><strong>Correct</strong> inaccurate or incomplete data</li>
+          <li><strong>Delete</strong> your account and associated personal data</li>
+          <li><strong>Object</strong> to processing of your data in certain circumstances</li>
+          <li><strong>Withdraw consent</strong> for newsletter communications at any time</li>
+          <li><strong>Data portability</strong> — request a copy of your data in a readable format</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at privacy@grafide.com.</p>
+      </section>
+
+      <section id="children" class="legal-section">
+        <h2>7. Children's Privacy</h2>
+        <p>Grafide is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided us with personal information, please contact us and we will promptly delete it.</p>
+      </section>
+
+      <section id="security" class="legal-section">
+        <h2>8. Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your data against unauthorised access, alteration, disclosure, or destruction. These include BCrypt password hashing, JWT-based authentication, and HTTPS encryption in production.</p>
+        <p>No method of transmission over the internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+      </section>
+
+      <section id="changes-privacy" class="legal-section">
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy periodically. Changes will be posted on this page with a revised date. We will notify registered users of significant changes via email.</p>
+      </section>
+
+      <section id="contact-privacy" class="legal-section">
+        <h2>10. Contact</h2>
+        <p>For privacy-related questions or to exercise your data rights:</p>
+        <div class="legal-contact-block">
+          <p><strong>Email:</strong> privacy@grafide.com</p>
+          <p>Or use our <a href="contact.html">contact form</a> and select "Privacy" as the subject.</p>
+        </div>
+      </section>
+
+      <div class="legal-nav-links">
+        <a href="terms.html">← Terms of Use</a>
+        <a href="cookies.html">Cookie Policy →</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>© 2026 Grafide. All rights reserved.</p>
+      <div class="footer-accent-bars">
+        <span class="bar bar-white"></span>
+        <span class="bar bar-navy"></span>
+        <span class="bar bar-cyan"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

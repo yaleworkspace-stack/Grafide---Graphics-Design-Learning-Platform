@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Grafide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/legal.css" />
+</head>
+<body>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="auth-panel" id="loginPanel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h2 class="auth-title">Sign in to Grafide</h2>
+        <div class="auth-field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" /></div>
+        <button class="btn-primary full" id="loginBtn">Sign In</button>
+        <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
+        <div id="loginError" class="auth-error"></div>
+      </div>
+      <div class="auth-panel hidden" id="signupPanel">
+        <p class="auth-eyebrow">Join the community</p>
+        <h2 class="auth-title">Create your account</h2>
+        <div class="auth-field"><label>Full Name</label><input type="text" id="signupName" placeholder="Your name" /></div>
+        <div class="auth-field"><label>Email</label><input type="email" id="signupEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="signupPassword" placeholder="Min. 8 characters" /></div>
+        <button class="btn-primary full" id="signupBtn">Create Account</button>
+        <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
+        <div id="signupError" class="auth-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-accent-bars">
+      <span class="bar bar-white"></span>
+      <span class="bar bar-navy"></span>
+      <span class="bar bar-cyan"></span>
+    </div>
+   <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Grafide" width="120" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <div class="nav-auth" id="navAuth">
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      </div>
+      <div class="nav-user hidden" id="navUser">
+        <div class="nav-user-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="dashboard.html" class="btn-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost" style="font-size:0.82rem;padding:0.45rem 1rem;" onclick="logout()">Sign Out</button>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="../index.html">Home</a><a href="about.html">About</a>
+      <a href="contact.html">Contact</a><a href="dashboard.html">Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <p class="section-eyebrow">Legal</p>
+      <h1>Terms of Use</h1>
+      <p class="legal-updated">Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <div class="legal-layout">
+    <aside class="legal-sidebar">
+      <p class="legal-sidebar-label">On this page</p>
+      <nav class="legal-toc">
+        <a href="#acceptance">1. Acceptance</a>
+        <a href="#use">2. Use of the Platform</a>
+        <a href="#accounts">3. Accounts</a>
+        <a href="#content">4. Content</a>
+        <a href="#certificates">5. Certificates</a>
+        <a href="#intellectual-property">6. Intellectual Property</a>
+        <a href="#prohibited">7. Prohibited Conduct</a>
+        <a href="#termination">8. Termination</a>
+        <a href="#disclaimer">9. Disclaimer</a>
+        <a href="#changes">10. Changes</a>
+        <a href="#contact-legal">11. Contact</a>
+      </nav>
+    </aside>
+
+    <main class="legal-body">
+
+      <section id="acceptance" class="legal-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using the Grafide platform ("the Platform"), you agree to be bound by these Terms of Use. If you do not agree to these terms, you may not use the Platform. These terms apply to all visitors, users, and others who access or use the service.</p>
+        <p>Grafide reserves the right to update these terms at any time. Continued use of the Platform after changes constitutes your acceptance of the revised terms.</p>
+      </section>
+
+      <section id="use" class="legal-section">
+        <h2>2. Use of the Platform</h2>
+        <p>Grafide provides a graphics design education platform offering structured courses, tutorials, assessments, and verifiable certificates. The Platform is intended for personal, non-commercial educational use unless otherwise agreed in writing.</p>
+        <p>You agree to use the Platform only for lawful purposes and in a manner that does not infringe the rights of others or restrict their use and enjoyment of the Platform.</p>
+        <div class="legal-callout">
+          <i class="fa-solid fa-circle-info"></i>
+          <p>Access to the first lesson of every course is free. Full course access requires a registered account.</p>
+        </div>
+      </section>
+
+      <section id="accounts" class="legal-section">
+        <h2>3. Accounts</h2>
+        <p>To access full course content, progress tracking, and certificates, you must create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</p>
+        <p>You must provide accurate and complete information when registering. You may not use another person's account or create an account on behalf of someone else without their permission.</p>
+        <p>Grafide reserves the right to suspend or terminate accounts that violate these terms.</p>
+      </section>
+
+      <section id="content" class="legal-section">
+        <h2>4. Content</h2>
+        <p>Course content on Grafide is curated and created by the Grafide team. Lessons may include original written material, embedded third-party videos, and links to external resources. Grafide does not host third-party video content but may embed publicly available videos from platforms such as YouTube.</p>
+        <p>Grafide does not guarantee the accuracy, completeness, or continued availability of third-party content. External links are provided for convenience and do not constitute endorsement.</p>
+        <p>Tutorials, references, and examples are regularly reviewed for accuracy, but we cannot warrant full correctness of all content. Examples may be simplified to improve understanding.</p>
+      </section>
+
+      <section id="certificates" class="legal-section">
+        <h2>5. Certificates</h2>
+        <p>Grafide issues verifiable digital certificates upon successful completion of a course, including passing the level assessments. Each certificate carries a unique ID that can be verified publicly at grafide.com/verify.</p>
+        <p>Certificates represent completion of Grafide's structured course programme and are not accredited qualifications unless explicitly stated. Grafide makes no representation regarding the recognition of certificates by third-party employers or institutions.</p>
+        <p>Certificates are issued to the account holder whose name appears on the certificate. Transferring or misrepresenting certificates is a violation of these terms.</p>
+      </section>
+
+      <section id="intellectual-property" class="legal-section">
+        <h2>6. Intellectual Property</h2>
+        <p>All original content on the Platform, including written lessons, design, layout, branding, and code, is the property of Grafide and is protected by applicable copyright and intellectual property laws.</p>
+        <p>You may not reproduce, distribute, modify, or create derivative works from Platform content without prior written permission from Grafide.</p>
+        <p>Third-party trademarks, logos, and content referenced on the Platform remain the property of their respective owners.</p>
+      </section>
+
+      <section id="prohibited" class="legal-section">
+        <h2>7. Prohibited Conduct</h2>
+        <p>You agree not to:</p>
+        <ul class="legal-list">
+          <li>Use the Platform for any unlawful purpose</li>
+          <li>Attempt to gain unauthorised access to any part of the Platform or its backend systems</li>
+          <li>Scrape, harvest, or systematically extract content from the Platform</li>
+          <li>Share account credentials or allow others to use your account</li>
+          <li>Upload or transmit malicious code, viruses, or harmful data</li>
+          <li>Impersonate Grafide, its team, or other users</li>
+          <li>Use the Platform to distribute spam or unsolicited commercial communications</li>
+        </ul>
+      </section>
+
+      <section id="termination" class="legal-section">
+        <h2>8. Termination</h2>
+        <p>Grafide may suspend or terminate your access to the Platform at any time, with or without notice, for conduct that violates these terms or is otherwise harmful to the Platform, other users, or third parties.</p>
+        <p>You may delete your account at any time by contacting us at hello@grafide.com. Upon deletion, your personal data and progress will be removed in accordance with our Privacy Policy.</p>
+      </section>
+
+      <section id="disclaimer" class="legal-section">
+        <h2>9. Disclaimer of Warranties</h2>
+        <p>The Platform is provided on an "as is" and "as available" basis. Grafide makes no warranties, express or implied, regarding the Platform's reliability, availability, or fitness for a particular purpose.</p>
+        <p>Grafide shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Platform.</p>
+      </section>
+
+      <section id="changes" class="legal-section">
+        <h2>10. Changes to These Terms</h2>
+        <p>Grafide reserves the right to modify these Terms of Use at any time. Changes will be posted on this page with an updated date. Your continued use of the Platform after changes constitutes acceptance of the revised terms.</p>
+        <p>We recommend reviewing these terms periodically to stay informed of any updates.</p>
+      </section>
+
+      <section id="contact-legal" class="legal-section">
+        <h2>11. Contact</h2>
+        <p>If you have questions about these Terms of Use, please contact us:</p>
+        <div class="legal-contact-block">
+          <p><strong>Email:</strong> legal@grafide.com</p>
+          <p><strong>General:</strong> hello@grafide.com</p>
+          <p>Or use our <a href="contact.html">contact form</a>.</p>
+        </div>
+      </section>
+
+      <div class="legal-nav-links">
+        <a href="privacy.html">Privacy Policy →</a>
+        <a href="cookies.html">Cookie Policy →</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>© 2026 Grafide. All rights reserved.</p>
+      <div class="footer-accent-bars">
+        <span class="bar bar-white"></span>
+        <span class="bar bar-navy"></span>
+        <span class="bar bar-cyan"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy — Grafide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/legal.css" />
+</head>
+<body>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="auth-panel" id="loginPanel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h2 class="auth-title">Sign in to Grafide</h2>
+        <div class="auth-field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" /></div>
+        <button class="btn-primary full" id="loginBtn">Sign In</button>
+        <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
+        <div id="loginError" class="auth-error"></div>
+      </div>
+      <div class="auth-panel hidden" id="signupPanel">
+        <p class="auth-eyebrow">Join the community</p>
+        <h2 class="auth-title">Create your account</h2>
+        <div class="auth-field"><label>Full Name</label><input type="text" id="signupName" placeholder="Your name" /></div>
+        <div class="auth-field"><label>Email</label><input type="email" id="signupEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="signupPassword" placeholder="Min. 8 characters" /></div>
+        <button class="btn-primary full" id="signupBtn">Create Account</button>
+        <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
+        <div id="signupError" class="auth-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-accent-bars">
+      <span class="bar bar-white"></span>
+      <span class="bar bar-navy"></span>
+      <span class="bar bar-cyan"></span>
+    </div>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Grafide" width="120" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <div class="nav-auth" id="navAuth">
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      </div>
+      <div class="nav-user hidden" id="navUser">
+        <div class="nav-user-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="dashboard.html" class="btn-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost" style="font-size:0.82rem;padding:0.45rem 1rem;" onclick="logout()">Sign Out</button>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="../index.html">Home</a><a href="about.html">About</a>
+      <a href="contact.html">Contact</a><a href="dashboard.html">Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <p class="section-eyebrow">Legal</p>
+      <h1>Cookie Policy</h1>
+      <p class="legal-updated">Last updated: June 2026</p>
+    </div>
+  </section>
+
+  <div class="legal-layout">
+    <aside class="legal-sidebar">
+      <p class="legal-sidebar-label">On this page</p>
+      <nav class="legal-toc">
+        <a href="#what-are-cookies">1. What Are Cookies</a>
+        <a href="#what-we-use">2. What We Use</a>
+        <a href="#types">3. Storage Types</a>
+        <a href="#third-party">4. Third-Party Content</a>
+        <a href="#control">5. Your Control</a>
+        <a href="#contact-cookies">6. Contact</a>
+      </nav>
+    </aside>
+
+    <main class="legal-body">
+
+      <section id="what-are-cookies" class="legal-section">
+        <h2>1. What Are Cookies</h2>
+        <p>Cookies are small text files placed on your device by websites you visit. They are widely used to make websites work efficiently and to provide information to website owners.</p>
+        <p>Grafide takes a minimal approach to cookies — we use only what is necessary for the platform to function. We do not use advertising cookies or third-party tracking cookies.</p>
+      </section>
+
+      <section id="what-we-use" class="legal-section">
+        <h2>2. What We Use</h2>
+        <div class="legal-callout">
+          <i class="fa-solid fa-circle-check" style="color:#27ae60"></i>
+          <p>Grafide uses <strong>localStorage</strong> — browser-based storage — rather than traditional cookies for most session data. This means data stays on your device and is not transmitted in HTTP headers.</p>
+        </div>
+
+        <div class="legal-table-wrap" style="margin-top:1.5rem;">
+          <table class="legal-table">
+            <thead>
+              <tr><th>Storage Key</th><th>Purpose</th><th>Type</th><th>Expires</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>grafide_token</code></td>
+                <td>Stores your JWT authentication token to keep you logged in</td>
+                <td>localStorage</td>
+                <td>24 hours (token expiry)</td>
+              </tr>
+              <tr>
+                <td><code>grafide_user</code></td>
+                <td>Stores your name, email, and role for UI display</td>
+                <td>localStorage</td>
+                <td>Until you sign out</td>
+              </tr>
+              <tr>
+                <td><code>grafide_progress_*</code></td>
+                <td>Caches your lesson progress locally for faster loading</td>
+                <td>localStorage</td>
+                <td>Until cleared or synced</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="types" class="legal-section">
+        <h2>3. Storage Types Explained</h2>
+        <p>We use <strong>localStorage</strong> rather than cookies. The key difference:</p>
+        <ul class="legal-list">
+          <li>localStorage data is stored entirely on your device</li>
+          <li>It is never automatically sent to the server in HTTP headers</li>
+          <li>It persists until explicitly cleared or you sign out</li>
+          <li>It cannot be accessed by other websites</li>
+        </ul>
+        <p>This approach is more privacy-friendly than traditional cookie-based sessions because your session data never travels with every HTTP request — only when you explicitly make API calls.</p>
+      </section>
+
+      <section id="third-party" class="legal-section">
+        <h2>4. Third-Party Content</h2>
+        <p>Some lessons embed YouTube videos. When a YouTube video is embedded and played, YouTube may set its own cookies on your device in accordance with Google's privacy policy. Grafide does not control these cookies.</p>
+        <p>External resource links on lesson pages open in a new tab. Visiting those external sites may result in those sites setting their own cookies. Grafide is not responsible for third-party cookie practices.</p>
+        <div class="legal-callout">
+          <i class="fa-brands fa-youtube" style="color:#FF0000"></i>
+          <p>YouTube videos are embedded using standard iframes. If you are concerned about YouTube cookies, you can watch linked videos directly on YouTube instead.</p>
+        </div>
+      </section>
+
+      <section id="control" class="legal-section">
+        <h2>5. Your Control</h2>
+        <p>You can clear Grafide's localStorage data at any time:</p>
+        <ul class="legal-list">
+          <li><strong>Sign out</strong> — clears your token and user data from localStorage</li>
+          <li><strong>Browser settings</strong> — clear site data for grafide.com in your browser's developer tools or privacy settings</li>
+          <li><strong>Private/Incognito mode</strong> — localStorage is cleared when you close the window</li>
+        </ul>
+        <p>Clearing localStorage will sign you out and reset locally cached progress. Your server-side progress and certificates are not affected.</p>
+        <p>To manage YouTube cookies, refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+      </section>
+
+      <section id="contact-cookies" class="legal-section">
+        <h2>6. Contact</h2>
+        <p>Questions about our cookie and storage practices:</p>
+        <div class="legal-contact-block">
+          <p><strong>Email:</strong> privacy@grafide.com</p>
+          <p>Or use our <a href="contact.html">contact form</a>.</p>
+        </div>
+      </section>
+
+      <div class="legal-nav-links">
+        <a href="privacy.html">← Privacy Policy</a>
+        <a href="terms.html">Terms of Use →</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>© 2026 Grafide. All rights reserved.</p>
+      <div class="footer-accent-bars">
+        <span class="bar bar-white"></span>
+        <span class="bar bar-navy"></span>
+        <span class="bar bar-cyan"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

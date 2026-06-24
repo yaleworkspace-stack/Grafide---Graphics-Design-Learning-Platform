@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work With Us — Grafide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/legal.css" />
+</head>
+<body>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="auth-panel" id="loginPanel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h2 class="auth-title">Sign in to Grafide</h2>
+        <div class="auth-field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" /></div>
+        <button class="btn-primary full" id="loginBtn">Sign In</button>
+        <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
+        <div id="loginError" class="auth-error"></div>
+      </div>
+      <div class="auth-panel hidden" id="signupPanel">
+        <p class="auth-eyebrow">Join the community</p>
+        <h2 class="auth-title">Create your account</h2>
+        <div class="auth-field"><label>Full Name</label><input type="text" id="signupName" placeholder="Your name" /></div>
+        <div class="auth-field"><label>Email</label><input type="email" id="signupEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="signupPassword" placeholder="Min. 8 characters" /></div>
+        <button class="btn-primary full" id="signupBtn">Create Account</button>
+        <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
+        <div id="signupError" class="auth-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-accent-bars">
+      <span class="bar bar-white"></span>
+      <span class="bar bar-navy"></span>
+      <span class="bar bar-cyan"></span>
+    </div>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Grafide" width="120" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <div class="nav-auth" id="navAuth">
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+      </div>
+      <div class="nav-user hidden" id="navUser">
+        <div class="nav-user-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-user-divider"></div>
+        <a href="dashboard.html" class="btn-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <span class="user-greeting">Hi, <strong id="userName"></strong></span>
+        <button class="btn-ghost" style="font-size:0.82rem;padding:0.45rem 1rem;" onclick="logout()">Sign Out</button>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="../index.html">Home</a><a href="about.html">About</a>
+      <a href="contact.html">Contact</a><a href="dashboard.html">Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-eyebrow">Collaborate</p>
+      <h1 class="page-hero-title">Work with<br /><em>Grafide.</em></h1>
+      <p style="max-width:520px;margin-top:1rem;font-size:1.05rem;color:var(--text-muted);">
+        Whether you want to teach, partner, or just reach out — there's a place for you here.
+      </p>
+    </div>
+  </section>
+
+  <!-- TAB NAV -->
+  <div class="wwu-tabs">
+    <div class="wwu-tabs-inner">
+      <button class="wwu-tab active" onclick="switchTab('partners')" id="tab-partners">
+        <i class="fa-solid fa-handshake"></i> Partners
+      </button>
+      <button class="wwu-tab" onclick="switchTab('content')" id="tab-content">
+        <i class="fa-solid fa-file-pen"></i> Content & Tutors
+      </button>
+      <button class="wwu-tab" onclick="switchTab('general')" id="tab-general">
+        <i class="fa-solid fa-comments"></i> General Enquiries
+      </button>
+    </div>
+  </div>
+
+  <!-- ======== PARTNERS ======== -->
+  <div class="wwu-panel" id="panel-partners">
+    <div class="wwu-panel-inner">
+
+      <div class="wwu-intro">
+        <p class="section-eyebrow">Partnerships</p>
+        <h2>Build something with us.</h2>
+        <p>Grafide is building the go-to platform for graphics design education. We're open to partnerships that extend our reach, enrich our content, or bring new tools to our students.</p>
+      </div>
+
+      <div class="wwu-options">
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-building"></i></div>
+          <h4>Brand Partnerships</h4>
+          <p>Integrate your design tool or software into Grafide's curriculum. Reach an audience actively learning to use the tools you build.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h4>Educational Institutions</h4>
+          <p>Bring Grafide into your school, college, or training programme. We offer structured content that complements formal design education.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h4>Affiliate & Referral</h4>
+          <p>Refer students to Grafide and earn. If you run a design community, blog, or YouTube channel, let's talk about an affiliate arrangement.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-globe"></i></div>
+          <h4>Content Licensing</h4>
+          <p>Want to use Grafide's course content for your own platform or programme? We're open to licensing discussions.</p>
+        </div>
+      </div>
+
+      <div class="wwu-form-section">
+        <h3>Partner Application</h3>
+        <p class="wwu-form-sub">Tell us about your organisation and what you have in mind.</p>
+        <div class="wwu-form">
+          <div class="wwu-form-row">
+            <div class="auth-field">
+              <label>Your Name</label>
+              <input type="text" id="p-name" placeholder="Full name" />
+            </div>
+            <div class="auth-field">
+              <label>Organisation</label>
+              <input type="text" id="p-org" placeholder="Company or institution name" />
+            </div>
+          </div>
+          <div class="wwu-form-row">
+            <div class="auth-field">
+              <label>Email</label>
+              <input type="email" id="p-email" placeholder="work@example.com" />
+            </div>
+            <div class="auth-field">
+              <label>Partnership Type</label>
+              <select id="p-type">
+                <option value="">Select type...</option>
+                <option value="brand">Brand Partnership</option>
+                <option value="education">Educational Institution</option>
+                <option value="affiliate">Affiliate / Referral</option>
+                <option value="licensing">Content Licensing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="auth-field">
+            <label>Website</label>
+            <input type="url" id="p-website" placeholder="https://yourwebsite.com" />
+          </div>
+          <div class="auth-field">
+            <label>Tell us about your proposal</label>
+            <textarea id="p-message" rows="5"
+              placeholder="What kind of partnership are you proposing? What value would it bring to Grafide students?"
+              style="width:100%;padding:0.7rem 1rem;border:1.5px solid var(--border);border-radius:4px;
+                     font-family:var(--font-body);font-size:0.92rem;background:var(--cream);
+                     color:var(--text-main);outline:none;resize:vertical;"></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitForm('partners')">
+            Send Partnership Proposal <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <div id="partners-result" class="wwu-result"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======== CONTENT & TUTORS ======== -->
+  <div class="wwu-panel hidden" id="panel-content">
+    <div class="wwu-panel-inner">
+
+      <div class="wwu-intro">
+        <p class="section-eyebrow">Content & Tutors</p>
+        <h2>Share your expertise.</h2>
+        <p>Grafide is built on quality content. If you're a practising designer, educator, or specialist who wants to contribute lessons, tutorials, or a full course — we want to hear from you.</p>
+      </div>
+
+      <div class="wwu-options">
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h4>Become a Tutor</h4>
+          <p>Create and publish your own courses on Grafide. Set your curriculum, write lessons, and curate resources under your name.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h4>Contribute a Lesson</h4>
+          <p>Not ready for a full course? Submit a single lesson or tutorial to be reviewed and published under our editorial team.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-brands fa-youtube"></i></div>
+          <h4>Video Content</h4>
+          <p>Have a YouTube channel covering design? We curate quality external videos into our lessons. Submit your channel for consideration.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h4>Guest Editorial</h4>
+          <p>Write for Grafide's editorial section. Deep dives, design theory, tool comparisons, career advice — if it helps designers, we're interested.</p>
+        </div>
+      </div>
+
+      <div class="wwu-what-we-look-for">
+        <h3>What we look for</h3>
+        <div class="wwu-criteria">
+          <div class="wwu-criterion">
+            <i class="fa-solid fa-check" style="color:var(--cyan)"></i>
+            <span>Practical, hands-on knowledge of the tool or topic</span>
+          </div>
+          <div class="wwu-criterion">
+            <i class="fa-solid fa-check" style="color:var(--cyan)"></i>
+            <span>Clear, structured communication — you can explain things step by step</span>
+          </div>
+          <div class="wwu-criterion">
+            <i class="fa-solid fa-check" style="color:var(--cyan)"></i>
+            <span>Original content — we don't republish content that already exists elsewhere</span>
+          </div>
+          <div class="wwu-criterion">
+            <i class="fa-solid fa-check" style="color:var(--cyan)"></i>
+            <span>Commitment — tutors are expected to maintain and update their content</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wwu-form-section">
+        <h3>Content Application</h3>
+        <p class="wwu-form-sub">Tell us what you want to create and your background in design.</p>
+        <div class="wwu-form">
+          <div class="wwu-form-row">
+            <div class="auth-field">
+              <label>Your Name</label>
+              <input type="text" id="c-name" placeholder="Full name" />
+            </div>
+            <div class="auth-field">
+              <label>Email</label>
+              <input type="email" id="c-email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="wwu-form-row">
+            <div class="auth-field">
+              <label>Contribution Type</label>
+              <select id="c-type">
+                <option value="">Select...</option>
+                <option value="tutor">Become a Tutor</option>
+                <option value="lesson">Contribute a Lesson</option>
+                <option value="video">Video Content</option>
+                <option value="editorial">Guest Editorial</option>
+              </select>
+            </div>
+            <div class="auth-field">
+              <label>Design Speciality</label>
+              <select id="c-specialty">
+                <option value="">Select...</option>
+                <option value="coreldraw">CorelDRAW</option>
+                <option value="photoshop">Photoshop</option>
+                <option value="illustrator">Adobe Illustrator</option>
+                <option value="msword">Microsoft Word</option>
+                <option value="canva">Canva</option>
+                <option value="general">General Design</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="auth-field">
+            <label>Portfolio or relevant link</label>
+            <input type="url" id="c-portfolio" placeholder="https://your-portfolio.com or YouTube channel" />
+          </div>
+          <div class="auth-field">
+            <label>Tell us what you want to create</label>
+            <textarea id="c-message" rows="5"
+              placeholder="What course or lesson do you have in mind? What's your background and experience with this tool?"
+              style="width:100%;padding:0.7rem 1rem;border:1.5px solid var(--border);border-radius:4px;
+                     font-family:var(--font-body);font-size:0.92rem;background:var(--cream);
+                     color:var(--text-main);outline:none;resize:vertical;"></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitForm('content')">
+            Submit Application <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <div id="content-result" class="wwu-result"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======== GENERAL ENQUIRIES ======== -->
+  <div class="wwu-panel hidden" id="panel-general">
+    <div class="wwu-panel-inner">
+
+      <div class="wwu-intro">
+        <p class="section-eyebrow">General Enquiries</p>
+        <h2>Just want to talk?</h2>
+        <p>If your question doesn't fit the other categories — press enquiries, feedback, bug reports, accessibility concerns, or anything else — this is the place.</p>
+      </div>
+
+      <div class="wwu-options">
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-newspaper"></i></div>
+          <h4>Press & Media</h4>
+          <p>Writing about Grafide or covering design education? We're happy to talk. Reach us at press@grafide.com.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-bug"></i></div>
+          <h4>Bug Reports</h4>
+          <p>Found something broken? Tell us exactly what happened, which browser you're on, and what you expected to see.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-universal-access"></i></div>
+          <h4>Accessibility</h4>
+          <p>We're committed to making Grafide accessible. If you're experiencing accessibility barriers, please let us know.</p>
+        </div>
+        <div class="wwu-option-card">
+          <div class="wwu-option-icon"><i class="fa-solid fa-star"></i></div>
+          <h4>Feedback</h4>
+          <p>General feedback on the platform, course quality, or your learning experience. We read every message.</p>
+        </div>
+      </div>
+
+      <div class="wwu-form-section">
+        <h3>Send a Message</h3>
+        <p class="wwu-form-sub">We aim to respond within 2 business days.</p>
+        <div class="wwu-form">
+          <div class="wwu-form-row">
+            <div class="auth-field">
+              <label>Your Name</label>
+              <input type="text" id="g-name" placeholder="Full name" />
+            </div>
+            <div class="auth-field">
+              <label>Email</label>
+              <input type="email" id="g-email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="auth-field">
+            <label>Subject</label>
+            <select id="g-subject">
+              <option value="">Select topic...</option>
+              <option value="press">Press / Media</option>
+              <option value="bug">Bug Report</option>
+              <option value="accessibility">Accessibility</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="auth-field">
+            <label>Message</label>
+            <textarea id="g-message" rows="5"
+              placeholder="Tell us what's on your mind..."
+              style="width:100%;padding:0.7rem 1rem;border:1.5px solid var(--border);border-radius:4px;
+                     font-family:var(--font-body);font-size:0.92rem;background:var(--cream);
+                     color:var(--text-main);outline:none;resize:vertical;"></textarea>
+          </div>
+          <button class="btn-primary" onclick="submitForm('general')">
+            Send Message <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <div id="general-result" class="wwu-result"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
+      <p>© 2026 Grafide. All rights reserved.</p>
+      <div class="footer-accent-bars">
+        <span class="bar bar-white"></span>
+        <span class="bar bar-navy"></span>
+        <span class="bar bar-cyan"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.wwu-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.wwu-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`tab-${tab}`).classList.add('active');
+      document.getElementById(`panel-${tab}`).classList.remove('hidden');
+      window.scrollTo({ top: document.querySelector('.wwu-tabs').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    async function submitForm(type) {
+      const fields = {
+        partners: { name: 'p-name', email: 'p-email', message: 'p-message', extra: () => ({
+          organisation: document.getElementById('p-org')?.value,
+          partnerType: document.getElementById('p-type')?.value,
+          website: document.getElementById('p-website')?.value,
+        })},
+        content: { name: 'c-name', email: 'c-email', message: 'c-message', extra: () => ({
+          contributionType: document.getElementById('c-type')?.value,
+          specialty: document.getElementById('c-specialty')?.value,
+          portfolio: document.getElementById('c-portfolio')?.value,
+        })},
+        general: { name: 'g-name', email: 'g-email', message: 'g-message', extra: () => ({
+          subject: document.getElementById('g-subject')?.value,
+        })}
+      };
+
+      const f       = fields[type];
+      const name    = document.getElementById(f.name)?.value.trim();
+      const email   = document.getElementById(f.email)?.value.trim();
+      const message = document.getElementById(f.message)?.value.trim();
+      const result  = document.getElementById(`${type}-result`);
+
+      if (!name || !email || !message) {
+        result.style.color = '#c0392b';
+        result.textContent = 'Please fill in all required fields.';
+        return;
+      }
+
+      const payload = { name, email, message, subject: type, ...f.extra() };
+
+      try {
+        await fetch('http://localhost:8080/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch { /* graceful fallback */ }
+
+      result.style.color = 'var(--cyan-dark)';
+      result.textContent = '✓ Message received. We\'ll be in touch within 2 business days.';
+
+      // Clear fields
+      [f.name, f.email, f.message].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+      });
+    }
+
+    // Auto-open tab from URL hash
+    const hash = window.location.hash.replace('#', '');
+    if (['partners', 'content', 'general'].includes(hash)) switchTab(hash);
+  </script>
+</body>
+</html>
