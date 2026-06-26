@@ -4,7 +4,7 @@
    toast system, SEO meta helpers
    ============================================ */
 
-const API = 'http://localhost:8080/api';
+const API = window.API || 'http://localhost:8080/api';
 
 /* ============================================
    TOKEN / SESSION

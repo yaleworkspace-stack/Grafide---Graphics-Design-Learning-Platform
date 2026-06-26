@@ -1,0 +1,28 @@
+# ============================================
+# GRAFIDE — Backend .gitignore
+# Place this at: backend/.gitignore
+# ============================================
+
+# Maven
+target/
+*.class
+*.jar
+*.war
+
+# Local config (never commit secrets)
+src/main/resources/application-local.properties
+src/main/resources/application-dev.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

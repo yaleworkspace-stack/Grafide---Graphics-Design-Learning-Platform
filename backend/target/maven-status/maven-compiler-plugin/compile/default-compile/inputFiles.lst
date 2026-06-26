@@ -1,25 +1,28 @@
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\CertificateRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\GrafideApplication.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\ContactController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\Progress.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\AuthController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\security\JwtAuthFilter.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\PasswordResetTokenRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\ProgressRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\security\JwtUtil.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\ProgressController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\Quiz.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\Certificate.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\User.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\PasswordResetToken.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\CourseRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\AdminController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\QuizRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\service\EmailService.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\model\Course.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\config\SecurityConfig.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\CertificateController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\repository\UserRepository.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\QuizController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\CourseController.java
-C:\Users\enoch\Desktop\Grafide — Graphics Design Learning Platform\backend\src\main\java\com\grafide\controller\NewsletterController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\AuthController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\CertificateController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\security\JwtAuthFilter.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\PortfolioRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\PortfolioItem.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\CourseController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\Certificate.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\Course.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\security\JwtUtil.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\Progress.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\NewsletterController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\CourseRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\UserRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\AdminController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\ProgressController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\Quiz.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\CertificateRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\QuizRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\ProgressRepository.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\ContactController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\config\SecurityConfig.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\PasswordResetToken.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\QuizController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\controller\PortfolioController.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\model\User.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\service\EmailService.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\GrafideApplication.java
+C:\Users\enoch\Desktop\Grafide-graphics\backend\src\main\java\com\grafide\repository\PasswordResetTokenRepository.java

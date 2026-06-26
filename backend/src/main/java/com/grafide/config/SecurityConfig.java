@@ -45,14 +45,17 @@ public class SecurityConfig {
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 // Public
+                
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/newsletter/**").permitAll()
                 .requestMatchers("/api/contact").permitAll()
                 .requestMatchers("/api/certificates/verify/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/quizzes/course/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/courses/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/portfolio/**").permitAll()
                 .requestMatchers("/api/auth/forgot-password").permitAll()
                 .requestMatchers("/api/auth/reset-password/**").permitAll()
+                
                 // Admin only
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                 .requestMatchers("/api/quizzes").hasRole("ADMIN")

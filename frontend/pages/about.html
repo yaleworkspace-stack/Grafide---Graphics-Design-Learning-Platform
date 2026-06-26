@@ -4,102 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Grafide</title>
-
-  <!-- Primary SEO -->
-<meta name="description" content="Grafide — learn graphics design with structured courses, video tutorials, and verified certificates. CorelDRAW, Photoshop, Illustrator, Word, Canva." />
-<meta name="keywords" content="graphics design, learn design, Photoshop tutorial, CorelDRAW, Adobe Illustrator, Canva, design certificate, online design course" />
-<meta name="author" content="Grafide" />
-<meta name="robots" content="index, follow" />
- 
-<!-- Open Graph (social sharing) -->
-<meta property="og:type"        content="website" />
-<meta property="og:site_name"   content="Grafide" />
-<meta property="og:title"       content="Grafide — Learn Graphics Design" />
-<meta property="og:description" content="Structured design courses, embedded tutorials, and verifiable certificates. Free to start." />
-<meta property="og:url"         content="https://grafide.com/" />
-<meta property="og:image"       content="https://grafide.com/images/og-image.png" />
- 
-<!-- Twitter Card -->
-<meta name="twitter:card"        content="summary_large_image" />
-<meta name="twitter:title"       content="Grafide — Learn Graphics Design" />
-<meta name="twitter:description" content="Structured design courses, embedded tutorials, and verifiable certificates." />
-<meta name="twitter:image"       content="https://grafide.com/images/og-image.png" />
- 
-<!-- Canonical -->
-<link rel="canonical" href="https://grafide.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/about.css" />
 </head>
 <body>
+
+  <!-- AUTH MODAL -->
   <div class="modal-overlay" id="authModal">
-  <div class="modal-box">
-    <button class="modal-close" id="closeModal">&times;</button>
-
-    <!-- LOGIN PANEL -->
-    <div class="auth-panel" id="loginPanel">
-      <p class="auth-eyebrow">Welcome back</p>
-      <h2 class="auth-title">Sign in to Grafide</h2>
-      <div class="auth-field">
-        <label>Email</label>
-        <input type="email" id="loginEmail" placeholder="you@example.com" />
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="auth-panel" id="loginPanel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h2 class="auth-title">Sign in to Grafide</h2>
+        <div class="auth-field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" /></div>
+        <button class="btn-primary full" id="loginBtn">Sign In</button>
+        <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
+        <div id="loginError" class="auth-error"></div>
       </div>
-      <div class="auth-field">
-        <label>
-          Password
-          <a href="forgot-password.html"
-             style="float:right;font-size:0.78rem;font-weight:500;color:var(--cyan);">
-            Forgot password?
-          </a>
-        </label>
-        <input type="password" id="loginPassword" placeholder="••••••••" />
+      <div class="auth-panel hidden" id="signupPanel">
+        <p class="auth-eyebrow">Join the community</p>
+        <h2 class="auth-title">Create your account</h2>
+        <div class="auth-field"><label>Full Name</label><input type="text" id="signupName" placeholder="Your name" /></div>
+        <div class="auth-field"><label>Email</label><input type="email" id="signupEmail" placeholder="you@example.com" /></div>
+        <div class="auth-field"><label>Password</label><input type="password" id="signupPassword" placeholder="Min. 8 characters" /></div>
+        <div class="auth-terms">
+          <label class="auth-terms-label">
+            <input type="checkbox" id="signupTerms" />
+            <span>I agree to Grafide's <a href="terms.html" target="_blank">Terms of Use</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></span>
+          </label>
+        </div>
+        <button class="btn-primary full" id="signupBtn">Create Account</button>
+        <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
+        <div id="signupError" class="auth-error"></div>
       </div>
-      <button class="btn-primary full" id="loginBtn">Sign In</button>
-      <p class="auth-switch">No account? <span onclick="switchPanel('signup')">Create one</span></p>
-      <div id="loginError" class="auth-error"></div>
     </div>
-
-    <!-- SIGNUP PANEL -->
-    <div class="auth-panel hidden" id="signupPanel">
-      <p class="auth-eyebrow">Join the community</p>
-      <h2 class="auth-title">Create your account</h2>
-      <div class="auth-field">
-        <label>Full Name</label>
-        <input type="text" id="signupName" placeholder="Your name" />
-      </div>
-      <div class="auth-field">
-        <label>Email</label>
-        <input type="email" id="signupEmail" placeholder="you@example.com" />
-      </div>
-      <div class="auth-field">
-        <label>Password</label>
-        <input type="password" id="signupPassword" placeholder="Min. 8 characters" />
-      </div>
-
-      <!-- TERMS CHECKBOX -->
-      <div class="auth-terms">
-        <label class="auth-terms-label">
-          <input type="checkbox" id="signupTerms" />
-          <span>
-            I agree to Grafide's
-            <a href="terms.html" target="_blank">Terms of Use</a>
-            and
-            <a href="privacy.html" target="_blank">Privacy Policy</a>
-          </span>
-        </label>
-      </div>
-
-      <button class="btn-primary full" id="signupBtn">Create Account</button>
-      <p class="auth-switch">Already have an account? <span onclick="switchPanel('login')">Sign in</span></p>
-      <div id="signupError" class="auth-error"></div>
-    </div>
-
   </div>
-</div>
 
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-accent-bars">
       <span class="bar bar-white"></span>
@@ -107,65 +54,53 @@
       <span class="bar bar-cyan"></span>
     </div>
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <img src="../images/logo.png" alt="Grafide" width="120" />
-      </a>
-
+      <a href="../index.html" class="nav-logo"><span class="logo-diamond">◆◆</span>Grafide</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-divider" id="navDivider"></div>
+      <div class="nav-divider"></div>
       <div class="nav-auth" id="navAuth">
         <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
         <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
       </div>
-
       <div class="nav-user hidden" id="navUser">
         <div class="nav-user-links">
           <a href="../index.html">Home</a>
-          <a href="about.html">About</a>
+          <a href="about.html" class="active">About</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="nav-user-divider"></div>
-        <a href="dashboard.html" class="btn-dashboard">
-          <i class="fa-solid fa-gauge"></i> Dashboard
-        </a>
+        <a href="dashboard.html" class="btn-dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
         <span class="user-greeting">Hi, <strong id="userName"></strong></span>
-        <button class="btn-ghost"
-                style="font-size:0.82rem;padding:0.45rem 1rem;"
-                onclick="logout()">Sign Out</button>
+        <button class="btn-ghost" style="font-size:0.82rem;padding:0.45rem 1rem;" onclick="logout()">Sign Out</button>
       </div>
-
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
     </div>
-
     <div class="nav-mobile" id="navMobile">
       <a href="../index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
       <a href="dashboard.html">Dashboard</a>
       <div class="mobile-auth">
-        <button class="btn-primary"
-                onclick="openModal('signup');document.getElementById('navMobile').classList.remove('open')">
-          Get Started
-        </button>
-        <button class="btn-ghost"
-                onclick="openModal('login');document.getElementById('navMobile').classList.remove('open')">
-          Sign In
-        </button>
+        <button class="btn-primary" onclick="openModal('signup')">Get Started</button>
+        <button class="btn-ghost" onclick="openModal('login')">Sign In</button>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <p class="section-eyebrow">Our story</p>
-      <h1 class="page-hero-title">Design is a language.<br /><em>We teach it.</em></h1>
-      <div class="hero-brand-words" style="margin-top:2rem;">
+  <!-- ======== HERO ======== -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-hero-text">
+        <p class="section-eyebrow">The Brand</p>
+        <h1 class="about-hero-title">
+          Grafide.<br />
+          <em>Creative agency.<br />Fashion magazine.<br />Design school.</em>
+        </h1>
+      </div>
+      <div class="about-hero-brand-words">
         <span>Authentic</span>
         <span>Minimalistic</span>
         <span>Classic</span>
@@ -175,20 +110,56 @@
     </div>
   </section>
 
+  <!-- ======== BRAND OVERVIEW ======== -->
   <section class="page-section">
     <div class="page-section-inner two-col">
       <div class="page-col">
-        <p class="section-eyebrow">The mission</p>
-        <h2>Knowledge should be free. Craft should be taught well.</h2>
+        <p class="section-eyebrow">Who we are</p>
+        <h2>More than a platform. A creative house.</h2>
       </div>
       <div class="page-col">
-        <p>Grafide exists because graphics design education is fragmented. YouTube has tutorials. Books have theory. Neither holds you accountable, tracks your progress, or gives you something verifiable to show for it.</p>
-        <p style="margin-top:1rem;">We bring the best resources together, structure them into guided pathways, and turn learning into a measurable journey you can complete and verify.</p>
-        <p style="margin-top:1rem;">Five tools. Three levels each. One platform. Free to start.</p>
+        <p>Grafide is a creative agency and fashion magazine brand dedicated to the art and culture of design. We tell stories, celebrate craft, and explore the visual language that shapes the world around us.</p>
+        <p style="margin-top:1rem;">We work across agency projects, editorial commissions, and brand identity — bringing a perspective that is authentic, considered, and always rooted in strong visual thinking.</p>
+        <p style="margin-top:1rem;">The Grafide website — the full brand home — is coming soon.</p>
+        <div style="margin-top:1.5rem;">
+          <a href="work-with-us.html#partners" class="btn-primary">
+            Work With Us <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ======== THREE PILLARS ======== -->
+  <section class="pillars-section">
+    <div class="pillars-inner">
+      <div class="pillar">
+        <div class="pillar-num">I</div>
+        <div class="pillar-content">
+          <h3>Agency</h3>
+          <p>Brand identity, creative direction, graphic design, and visual strategy for clients across fashion, lifestyle, and culture.</p>
+        </div>
+      </div>
+      <div class="pillar-divider"></div>
+      <div class="pillar">
+        <div class="pillar-num">II</div>
+        <div class="pillar-content">
+          <h3>Magazine</h3>
+          <p>Grafide Magazine — an editorial initiative exploring fashion, art, and design culture. We focus on stories that inform, inspire, and draw awareness.</p>
+        </div>
+      </div>
+      <div class="pillar-divider"></div>
+      <div class="pillar">
+        <div class="pillar-num">III</div>
+        <div class="pillar-content">
+          <h3>Designs</h3>
+          <p>The learning platform. Structured courses in graphics design tools — CorelDRAW, Photoshop, Illustrator, Word, and Canva — with verified certificates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ACCENT BREAK ======== -->
   <div class="page-accent-break">
     <div class="nav-accent-bars" style="justify-content:center;gap:12px;">
       <span class="bar bar-white" style="width:120px;height:5px;"></span>
@@ -197,6 +168,22 @@
     </div>
   </div>
 
+  <!-- ======== GRAFIDE DESIGNS — THE PLATFORM ======== -->
+  <section class="page-section">
+    <div class="page-section-inner two-col">
+      <div class="page-col">
+        <p class="section-eyebrow">Grafide Designs</p>
+        <h2>The education initiative.</h2>
+      </div>
+      <div class="page-col">
+        <p>Grafide Designs is the learning platform arm of the Grafide brand. Built on the belief that design education is fragmented — too many YouTube tutorials, not enough structure, no accountability — we built a platform that changes that.</p>
+        <p style="margin-top:1rem;">Structured courses. Embedded resources. Level locking. Assessments. Verified certificates. Everything a serious design student needs, in one place, free to start.</p>
+        <p style="margin-top:1rem;">The platform covers five industry-standard tools across three progressive levels each. Complete all three levels, pass the assessments, and earn a certificate that anyone can verify publicly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== VALUES ======== -->
   <section class="page-section" style="background:var(--navy);">
     <div class="page-section-inner">
       <p class="section-eyebrow" style="color:var(--cyan);text-align:center;">What we stand for</p>
@@ -204,91 +191,126 @@
       <div class="values-grid">
         <div class="value-card">
           <span class="value-num">I</span>
-          <h4>Accessibility</h4>
-          <p>Every first lesson is free. No credit card. No paywall on fundamentals.</p>
+          <h4>Authenticity</h4>
+          <p>We don't follow trends. We explore, celebrate, and inform through a lens that is genuinely our own.</p>
         </div>
         <div class="value-card">
           <span class="value-num">II</span>
-          <h4>Structure</h4>
-          <p>Knowledge without structure is noise. Every course follows a deliberate Beginner → Intermediate → Advanced path.</p>
+          <h4>Craft</h4>
+          <p>Whether it's agency work, editorial, or a course lesson — quality of execution is non-negotiable.</p>
         </div>
         <div class="value-card">
           <span class="value-num">III</span>
-          <h4>Accountability</h4>
-          <p>Progress tracking, level locking, and assessments keep you honest with yourself.</p>
+          <h4>Access</h4>
+          <p>Design knowledge should be available to everyone. The first lesson is always free. Always.</p>
         </div>
         <div class="value-card">
           <span class="value-num">IV</span>
-          <h4>Credibility</h4>
-          <p>Every certificate has a unique ID anyone can verify. What you earn means something.</p>
+          <h4>Accountability</h4>
+          <p>Progress tracking, level locking, and verifiable certificates — we build systems that make you follow through.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ======== PORTFOLIO ======== -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-header">
+      <div>
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">Selected Works</h2>
+        <p class="section-sub">Agency projects, editorial, and creative direction from the Grafide studio.</p>
+      </div>
+
+      <!-- Category filter -->
+      <div class="portfolio-filters">
+        <button class="portfolio-filter active" onclick="filterPortfolio('ALL')">All</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('AGENCY')">Agency</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('MAGAZINE')">Magazine</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('EDITORIAL')">Editorial</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('STUDENT')">Student Work</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio-grid" id="portfolioGrid">
+      <div class="portfolio-loading">
+        <div class="loading-spinner" style="margin:0 auto;width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--cyan);border-radius:50%;animation:spin 0.7s linear infinite;"></div>
+      </div>
+    </div>
+
+    <!-- Empty state (shown when no items) -->
+    <div class="portfolio-empty hidden" id="portfolioEmpty">
+      <i class="fa-regular fa-image"></i>
+      <p>Portfolio coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ======== PLATFORM TOOLS ======== -->
   <section class="page-section">
     <div class="page-section-inner">
-      <p class="section-eyebrow">The curriculum</p>
-      <h2 style="margin-bottom:0.75rem;">Five tools. One skillset.</h2>
-      <p style="max-width:520px;margin-bottom:2.5rem;">We cover the full spectrum — from industry-standard professional tools to accessible entry-level platforms.</p>
+      <p class="section-eyebrow">Grafide Designs — Curriculum</p>
+      <h2 style="margin-bottom:0.75rem;">Five tools. Three levels each.</h2>
+      <p style="max-width:520px;margin-bottom:2.5rem;">Every course follows the same structure: Beginner → Intermediate → Advanced. Complete all three and earn a verified certificate.</p>
       <div class="tools-list">
         <div class="tool-row">
           <span class="tool-num">01</span>
-          <div>
-            <h4>CorelDRAW</h4>
-            <p>Vector illustration, layout design, print-ready artwork.</p>
-          </div>
+          <div><h4>CorelDRAW</h4><p>Vector illustration, layout design, print-ready artwork.</p></div>
           <a href="course.html?tool=coreldraw" class="tool-link">Start <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="tool-row">
           <span class="tool-num">02</span>
-          <div>
-            <h4>Photoshop</h4>
-            <p>Photo editing, compositing, digital painting.</p>
-          </div>
+          <div><h4>Photoshop</h4><p>Photo editing, compositing, digital painting.</p></div>
           <a href="course.html?tool=photoshop" class="tool-link">Start <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="tool-row">
           <span class="tool-num">03</span>
-          <div>
-            <h4>Adobe Illustrator</h4>
-            <p>Logos, icons, scalable vector graphics.</p>
-          </div>
+          <div><h4>Adobe Illustrator</h4><p>Logos, icons, scalable vector graphics.</p></div>
           <a href="course.html?tool=illustrator" class="tool-link">Start <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="tool-row">
           <span class="tool-num">04</span>
-          <div>
-            <h4>Microsoft Word</h4>
-            <p>Document design, typography, professional layouts.</p>
-          </div>
+          <div><h4>Microsoft Word</h4><p>Document design, typography, professional layouts.</p></div>
           <a href="course.html?tool=msword" class="tool-link">Start <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="tool-row">
           <span class="tool-num">05</span>
-          <div>
-            <h4>Canva</h4>
-            <p>Social media content, branded materials, presentations.</p>
-          </div>
+          <div><h4>Canva</h4><p>Social media content, branded materials, presentations.</p></div>
           <a href="course.html?tool=canva" class="tool-link">Start <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ======== CTA ======== -->
   <section class="page-cta">
     <div class="page-section-inner" style="text-align:center;">
-      <h2 style="color:var(--white);margin-bottom:0.75rem;">Ready to start?</h2>
-      <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem;">It’s free. No excuses.</p>
-      <button class="btn-primary large" onclick="openModal('signup')" style="background:var(--white);color:var(--navy);">
-        Create Free Account
-      </button>
+      <h2 style="color:var(--white);margin-bottom:0.75rem;">Ready to start learning?</h2>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem;">Free to start. No excuses.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <button class="btn-primary large" onclick="openModal('signup')"
+                style="background:var(--white);color:var(--navy);">
+          Create Free Account
+        </button>
+        <a href="work-with-us.html" class="btn-ghost large"
+           style="border-color:rgba(255,255,255,0.4);color:var(--white);">
+          Work With Us
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- ======== LIGHTBOX ======== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content" id="lightboxContent" onclick="event.stopPropagation()"></div>
+    <div class="lightbox-meta" id="lightboxMeta"></div>
+  </div>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
-      <p>© 2026 Grafide. All rights reserved.</p>
+      <p>© 2024 Grafide. All rights reserved.</p>
       <div class="footer-accent-bars">
         <span class="bar bar-white"></span>
         <span class="bar bar-navy"></span>
@@ -298,5 +320,6 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/portfolio.js"></script>
 </body>
 </html>

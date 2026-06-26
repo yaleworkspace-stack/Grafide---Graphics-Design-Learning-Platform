@@ -19,10 +19,12 @@ com\grafide\service\EmailService.class
 com\grafide\model\Quiz$Question.class
 com\grafide\model\Quiz.class
 com\grafide\controller\CertificateController.class
+com\grafide\model\PortfolioItem.class
 com\grafide\repository\CertificateRepository.class
 com\grafide\controller\QuizController.class
 com\grafide\GrafideApplication.class
 com\grafide\controller\AdminController.class
+com\grafide\controller\PortfolioController.class
 com\grafide\controller\AdminController$RoleRequest.class
 com\grafide\controller\CourseController.class
 com\grafide\repository\CourseRepository.class
@@ -36,5 +38,6 @@ com\grafide\repository\QuizRepository.class
 com\grafide\controller\AuthController$LoginRequest.class
 com\grafide\controller\CertificateController$IssueRequest.class
 com\grafide\model\Certificate.class
+com\grafide\repository\PortfolioRepository.class
 com\grafide\security\JwtAuthFilter.class
 com\grafide\controller\NewsletterController$SubscribeRequest.class

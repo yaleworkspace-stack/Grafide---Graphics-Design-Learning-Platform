@@ -64,6 +64,9 @@
         </a>
         <a href="#" class="admin-nav-item" data-view="users">
           <i class="fa-solid fa-users"></i> Users
+          <a href="#" class="admin-nav-item" data-view="portfolio">
+       <i class="fa-solid fa-images"></i> Portfolio
+       </a>
         </a>
         <div class="admin-nav-divider"></div>
         <a href="../../index.html" class="admin-nav-item">
@@ -247,6 +250,32 @@
         </div>
       </div>
 
+        <!-- ======== VIEW: PORTFOLIO ======== -->
+<div class="admin-view" id="view-portfolio">
+  <div class="admin-view-header">
+    <button class="btn-primary" onclick="openPortfolioEditor()">
+      <i class="fa-solid fa-plus"></i> Add Work
+    </button>
+  </div>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Preview</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Featured</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="portfolioTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
       <!-- ======== VIEW: USERS ======== -->
       <div class="admin-view" id="view-users">
         <div class="admin-table-wrap">
@@ -391,6 +420,92 @@
           <label>Quiz Title</label>
           <input type="text" id="quizTitle" placeholder="e.g. Beginner Level Assessment" />
         </div>
+
+        <!-- ======== PORTFOLIO EDITOR MODAL ======== -->
+<div class="admin-modal-overlay hidden" id="portfolioModal">
+  <div class="admin-modal">
+    <div class="admin-modal-header">
+      <h3 id="portfolioModalTitle">Add Portfolio Item</h3>
+      <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+    </div>
+    <div class="admin-modal-body">
+
+      <div class="editor-row">
+        <div class="admin-field">
+          <label>Category</label>
+          <select id="portfolioCategory">
+            <option value="AGENCY">Agency Work</option>
+            <option value="MAGAZINE">Magazine</option>
+            <option value="EDITORIAL">Editorial</option>
+            <option value="STUDENT">Student Work</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label>Media Type</label>
+          <select id="portfolioMediaType" onchange="toggleThumbnailField()">
+            <option value="IMAGE">Image</option>
+            <option value="VIDEO">Video</option>
+          </select>
+        </div>
+        <div class="admin-field small">
+          <label>Order</label>
+          <input type="number" id="portfolioOrder" value="0" min="0" />
+        </div>
+      </div>
+
+      <div class="admin-field">
+        <label>Title</label>
+        <input type="text" id="portfolioTitle" placeholder="Project or work title" />
+      </div>
+
+      <div class="admin-field">
+        <label>Description <span class="field-hint">(optional)</span></label>
+        <input type="text" id="portfolioDescription" placeholder="Brief description" />
+      </div>
+
+      <div class="admin-field">
+        <label>Media URL <span class="field-hint" id="mediaUrlHint">Full URL to your hosted image</span></label>
+        <input type="url" id="portfolioMediaUrl"
+               placeholder="https://your-server.com/images/work.jpg" />
+        <div id="portfolioPreview" style="margin-top:0.75rem;"></div>
+      </div>
+
+      <div class="admin-field hidden" id="thumbnailField">
+        <label>Thumbnail URL <span class="field-hint">Preview image for the video (required for video items)</span></label>
+        <input type="url" id="portfolioThumbnail"
+               placeholder="https://your-server.com/images/thumb.jpg" />
+      </div>
+
+      <div class="admin-field">
+        <label>External Link <span class="field-hint">(optional — Behance, client site, etc.)</span></label>
+        <input type="url" id="portfolioExternalLink"
+               placeholder="https://behance.net/your-project" />
+      </div>
+
+      <div style="display:flex;gap:2rem;">
+        <div class="admin-field inline">
+          <label class="toggle-label">
+            <input type="checkbox" id="portfolioFeatured" />
+            <span>Featured</span>
+          </label>
+        </div>
+        <div class="admin-field inline">
+          <label class="toggle-label">
+            <input type="checkbox" id="portfolioPublished" checked />
+            <span>Published</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <div class="admin-modal-footer">
+      <button class="btn-ghost" onclick="closePortfolioModal()">Cancel</button>
+      <button class="btn-primary" id="savePortfolioBtn" onclick="savePortfolioItem()">
+        <i class="fa-solid fa-floppy-disk"></i> Save Item
+      </button>
+    </div>
+  </div>
+</div>
 
         <!-- Questions -->
         <div class="admin-field">
