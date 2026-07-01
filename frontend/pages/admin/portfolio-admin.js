@@ -108,15 +108,15 @@ function openPortfolioEditor(item = null) {
   toggleThumbnailField();
   updatePortfolioPreview(item?.mediaUrl || '', item?.mediaType || 'IMAGE');
 
-const modal = document.getElementById('portfolioModal');
-modal.classList.remove('hidden');
-modal.style.display = 'flex';
+  const _modal = document.getElementById('portfolioModal');
+  _modal.classList.remove('hidden');
+  _modal.style.display = 'flex';
 }
 
 function closePortfolioModal() {
-  const modal = document.getElementById('portfolioModal');
-modal.classList.add('hidden');
-modal.style.display = 'none';
+  const _modal = document.getElementById('portfolioModal');
+  _modal.classList.add('hidden');
+  _modal.style.display = 'none';
   document.getElementById('portfolioPreview').innerHTML = '';
   _editingPortfolio = null;
 }
